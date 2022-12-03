@@ -2,6 +2,7 @@ import React from "react";
 import "./Signin.css";
 import { Box, Button } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import {Link} from 'react-router-dom';
 
 const Signin = () => {
 
@@ -9,7 +10,7 @@ const Signin = () => {
   return (
     <div>
       <Box sx={{justifyContent:"left"}}>
-        <ArrowBackIosIcon />
+     <Link to="/"> <ArrowBackIosIcon /></Link> 
       </Box>
       <Box sx={{ marginTop: "50px" }}>
         <h1
@@ -20,13 +21,12 @@ const Signin = () => {
         <h4>Enter the verification code we just sent on your mobile Number</h4>
         <input style={{width:"100%"}} id="partitioned" type="text" maxlength="5" />
         <div>
-          <Button
+        <Link to="/Home"> <Button
             style={{  marginTop: "30px", width:"100%" }}
-            sx={{ backgroundColor: "#FF6D6A" }}  
-            path="/signin" 
+            sx={{ backgroundColor: "#FF6D6A" }}   
           >
             Submit
-          </Button>
+          </Button></Link>
         </div>
         <div>
             <h4>Din't recieve the code? Resend</h4>

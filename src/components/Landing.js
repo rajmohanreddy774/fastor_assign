@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
+import {Grid, Box} from "@mui/material";
+import Cards from "./Cards";
 
 const Landing = () => {
     const [data,setData]=useState([])
@@ -14,6 +16,27 @@ const Landing = () => {
     <div>
       <div>
         <h3>Popular Ones</h3>
+        <Box sx={{ paddingTop: "50px" }}>
+        <Grid>
+          <Grid container spacing={4}>
+            {data.map((item) => (
+              <Grid xs={8}>
+                <Cards item={item} />
+              </Grid>
+            ))}
+            <Grid
+              xs={12}
+              sm={6}
+              md={4}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            ></Grid>
+          </Grid>
+        </Grid>
+      </Box>
+
+        
       </div>
     </div>
   )
